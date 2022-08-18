@@ -4,7 +4,7 @@
 
 
 
-## 0.2.0-SNAPSHOT
+## 0.2.0 - 2022-08-18
 * this is not a bug
 ```
 ! 999 World Cup Budapest 2010 56
@@ -17,6 +17,7 @@ with newline.
 ### Changed
 * save-as-text はコンマ区切りがお好みか？
 * prefer `--normal` rather than `--context`?
+
 
 ## 0.1.0 - 2022-08-18
 * project started.
