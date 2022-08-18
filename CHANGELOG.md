@@ -6,7 +6,8 @@
 
 
 ## 0.3.0-SNAPSHOT
-
+### Changed
+* namespaced. これに伴い、compare-ijf を compare\_ijf に名称変更。
 
 ## 0.2.0 - 2022-08-18
 * this is not a bug

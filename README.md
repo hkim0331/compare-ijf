@@ -14,10 +14,10 @@ https://github.com/babashka/babashka
 The diff command is usually found at /usr/bin/diff in macos and Linux.
 
 ## Install
-compare-ijf.clj を PATH の通ったフォルダに置く。
+compare_ijf.clj を PATH の通ったフォルダに置く。
 
-    $ cp compare-ijf.clj ~/bin/compare-ijf
-    $ chmod +x ~/bin/compare-ijf
+    $ cp compare_ijf.clj ~/bin/compare_ijf
+    $ chmod +x ~/bin/compare_ijf
 
 ## Usage
 
