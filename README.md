@@ -1,17 +1,17 @@
 # README
 
-https://data.ijf.org に登録された試合結果の新旧を比較する。
+Find newly created contests results at https://data.ijf.org.
 
 ## Require
 
-* macOS or Linux. Development is going on macOS Monterey.
-Maybe windows are also ok.
+* macOS or Linux. I'm using macOS to develop this script,
+maybe Windows are also ok.
 
 * babashka
 https://github.com/babashka/babashka
 
-* diff command installed
-(normally /usr/bin/diff)
+* diff command installed.
+usually found at /usr/bin/diff in macos and Linux.
 
 ## Install
 compare-ijf.clj を PATH の通ったフォルダに置く。

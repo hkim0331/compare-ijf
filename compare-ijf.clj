@@ -36,7 +36,7 @@
 ;;(filter-competitions ijf)
 
 (defn save-as-text
-  "save coll's values in `competitions`, as,
+  "save coll's values only, as,
    1000 World Cup Cairo 2010 112
    1001 World Cup Belo Horizonte 2010 112
    1002 World Cup Madrid 2010 56
@@ -44,7 +44,7 @@
   [coll]
   (let [lines (atom [])]
     (doseq [s coll]
-      (swap! lines conj (str/join " " (vals s))))
+      (swap! lines conj (str/join "," (vals s))))
     (spit competitions (str/join "\n" @lines))))
 
 ;;(save-as-text (filter-competitions ijf))
@@ -59,7 +59,7 @@
       (filter-competitions)
       (save-as-text))
   (sh "cp" competitions file-b)
-  (let [{:keys [exit out err]} (sh "diff" "-c" file-a file-b)]
+  (let [{:keys [exit out err]} (sh "diff" "--normal" "--text" file-a file-b)]
     (println out)))
 
 (compare-ijf)
