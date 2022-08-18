@@ -1,7 +1,10 @@
 # CHANGELOG
 
 ## Unreleased
+* ./competitions を問答無用で上書きしているのはどうか？
+* diff が見つかったら自動的にダウンロードしてくるとか。
 
+## 0.3.0-SNAPSHOT
 
 
 ## 0.2.0 - 2022-08-18
