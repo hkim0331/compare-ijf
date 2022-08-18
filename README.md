@@ -10,8 +10,8 @@ maybe Windows are also ok.
 * babashka
 https://github.com/babashka/babashka
 
-* diff command installed.
-usually found at /usr/bin/diff in macos and Linux.
+* `diff` command installed.
+The diff command is usually found at /usr/bin/diff in macos and Linux.
 
 ## Install
 compare-ijf.clj を PATH の通ったフォルダに置く。
@@ -21,8 +21,9 @@ compare-ijf.clj を PATH の通ったフォルダに置く。
 
 ## Usage
 
-Output of compare-ijf is just diff's.
-Lines start from `+` sign shows the contests which results are newly added.
+Output of compare-ijf is just the diff's output.
+Lines start from `+` sign show the contests which results are newly added on
+https://data.ijf.org.
 
 ```
 $ compare-ijf

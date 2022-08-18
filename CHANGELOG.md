@@ -4,6 +4,7 @@
 * ./competitions を問答無用で上書きしているのはどうか？
 * diff が見つかったら自動的にダウンロードしてくるとか。
 
+
 ## 0.3.0-SNAPSHOT
 
 
@@ -15,8 +16,8 @@
 ! 999 World Cup Budapest 2010 56
 \ No newline at end of file
 ```
-emacs/vi appends newline at the EOF if the file does not terminate
-with newline.
+emacs/vi appends a newline at the EOF if the file does not terminate
+with newline code.
 ### Changed
 * save-as-text はコンマ区切りがお好みか？
 * prefer `--normal` rather than `--context`?

@@ -1,13 +1,15 @@
 #!/usr/bin/env bb
-(require
-  '[babashka.curl :as curl]
-  '[cheshire.core :as json]
-  '[clojure.java.io :as io]
-  '[clojure.java.shell :refer [sh]]
-  '[clojure.string :as str])
+(ns compare-ijf
+  (:require
+   [babashka.curl :as curl]
+   [cheshire.core :as json]
+   [clojure.java.io :as io]
+   [clojure.java.shell :refer [sh]]
+   [clojure.string :as str]))
 
 ;; keep last competitions in a file.
 (def ^:private competitions (str (System/getenv "HOME") "/.competitions"))
+;; compare files on /tmp.
 (def ^:private file-a "/tmp/competitions-A")
 (def ^:private file-b "/tmp/competitions-B")
 
