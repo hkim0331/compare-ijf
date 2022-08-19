@@ -68,6 +68,8 @@
       (println out)
       (println err))))
 
+;; --dry-run
+;; --example
 (defn -main
   []
   (let [args *command-line-args*]
