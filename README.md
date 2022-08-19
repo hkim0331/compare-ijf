@@ -4,44 +4,41 @@ Find newly created contests results at https://data.ijf.org.
 
 ## Require
 
-* macOS or Linux. I'm using macOS to develop this script,
-maybe Windows are also ok.
+* macOS or Linux.
+Maybe Windows are also ok if babashka and diff are properly installed.
+I'm using macOS to develop this script,
 
 * babashka
 https://github.com/babashka/babashka
 
 * diff command installed.
-usually found at /usr/bin/diff in macos and Linux.
+The diff command is usually found at `/usr/bin/diff` in macos and Linux.
 
 ## Install
-compare-ijf.clj を PATH の通ったフォルダに置く。
+`compare_ijf.clj` を PATH の通ったフォルダに置き、実行可能ビットを立てておく。
+名前は変えても大丈夫。以下は .clj を剥ぎ取った名前にセーブしてます。
 
-    $ cp compare-ijf.clj ~/bin/compare-ijf
-    $ chmod +x ~/bin/compare-ijf
+    $ cp compare_ijf.clj ~/bin/compare_ijf
+    $ chmod +x ~/bin/compare_ijf
 
 ## Usage
 
-Output of compare-ijf is just diff's.
-Lines start from `+` sign shows the contests which results are newly added.
+Output of compare_ijf is just the diff's output.
+Each line shows the `id_completition`, `name` and `has_results` values
+which are newly added on
+https://data.ijf.org.
 
 ```
-$ compare-ijf
-*** /tmp/competitions-A  2022-08-18 21:35:09.000000000 +0900
---- /tmp/competitions-B  2022-08-18 21:35:11.000000000 +0900
-***************
-*** 9,22 ****
---- 9,32 ----
-  1008 World Championships Tokyo 2010 128
-  1009 World Cup Prague 2010 56
-  1010 World Cup Tashkent 2010 56
-+ 1011 World Cup Alamata 2010 56
-+ 1012 World Cup Birmingham 2010 55
-+ 1013 World Cup Rome 2010 56
-+ 1014 World Cup Baku 2010 56
-  1015 World Cup Minsk 2010 56
-  1016 World Cup Suwon 2010 112
-  1017 Grand Slam Tokyo 2009 112
+$ compare_ijf
+> 1068,World Cup Buenos Aires 2012,100
+> 1104,Panamerican Championships Seniors 2013,108
+> 1106,African Championships Seniors 2013,97
+> 1184,Oceanian Open Wollongong 2014,85
+> 1185,Grand Prix Qingdao 2014,109
+> 1186,Grand Prix Jeju 2014,112
 ```
+
+For example, the first line tells that IJF updates the 100 results about id_competition = 1068, name = 'World Cup BuenosAires 2012'.
 
 ## TODO
 
