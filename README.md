@@ -5,7 +5,7 @@ Find newly created contests results at https://data.ijf.org.
 ## Require
 
 * macOS or Linux. I'm using macOS to develop this script,
-maybe Windows are also ok.
+maybe Windows are also ok.v
 
 * babashka
 https://github.com/babashka/babashka
@@ -21,27 +21,18 @@ compare_ijf.clj を PATH の通ったフォルダに置く。
 
 ## Usage
 
-Output of compare-ijf is just the diff's output.
-Lines start from `+` sign show the contests which results are newly added on
+Output of compare_ijf is just the diff's output.
+Lines start from `>` sign show the contests which results are newly added on
 https://data.ijf.org.
 
 ```
-$ compare-ijf
-*** /tmp/competitions-A  2022-08-18 21:35:09.000000000 +0900
---- /tmp/competitions-B  2022-08-18 21:35:11.000000000 +0900
-***************
-*** 9,22 ****
---- 9,32 ----
-  1008 World Championships Tokyo 2010 128
-  1009 World Cup Prague 2010 56
-  1010 World Cup Tashkent 2010 56
-+ 1011 World Cup Alamata 2010 56
-+ 1012 World Cup Birmingham 2010 55
-+ 1013 World Cup Rome 2010 56
-+ 1014 World Cup Baku 2010 56
-  1015 World Cup Minsk 2010 56
-  1016 World Cup Suwon 2010 112
-  1017 Grand Slam Tokyo 2009 112
+$ compare_ijf
+> 1068,World Cup Buenos Aires 2012,100
+> 1104,Panamerican Championships Seniors 2013,108
+> 1106,African Championships Seniors 2013,97
+> 1184,Oceanian Open Wollongong 2014,85
+> 1185,Grand Prix Qingdao 2014,109
+> 1186,Grand Prix Jeju 2014,112
 ```
 
 ## TODO

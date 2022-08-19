@@ -17,7 +17,8 @@
   [url & [opt]] (curl/get url opt))
 
 (defn get-competitions
-  "Fetch competitions from data.ijf.org, return it as clojure map."
+  "Fetch competitions JSON from data.ijf.org,
+   return it's body as clojure map."
   []
   (-> (get-url "https://data.ijf.org/api/get_json"
                {:query-params {"params[action]" "competition.get_list"}})
@@ -47,7 +48,8 @@
   (let [lines (atom [])]
     (doseq [s coll]
       (swap! lines conj (str/join "," (vals s))))
-    (spit competitions (str/join "\n" @lines))))
+    (spit competitions (str/join "\n" @lines))
+    (spit competitions "\n" :append true)))
 
 ;;(save-as-text (filter-competitions ijf))
 
@@ -62,6 +64,14 @@
       (save-as-text))
   (sh "cp" competitions file-b)
   (let [{:keys [exit out err]} (sh "diff" "--normal" "--text" file-a file-b)]
-    (println out)))
+    (if-not (zero? exit)
+      (println out)
+      (println err))))
 
-(compare-ijf)
+(defn -main
+  []
+  (let [args *command-line-args*]
+     (println args)
+     (compare-ijf)))
+
+(-main)
