@@ -10,6 +10,8 @@
 68a69
 > 1068,World Cup Buenos Aires 2012,100
 ```
+* 一般化。compare-json
+
 
 ## 0.3.0 - 2022-08-19
 ### Changed
