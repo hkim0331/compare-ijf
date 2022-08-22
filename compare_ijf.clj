@@ -7,6 +7,8 @@
    [clojure.java.shell :refer [sh]]
    [clojure.string :as str]))
 
+(def ^:private version "0.4.0-SNAPSHOT")
+
 ;; keep last competitions in a file.
 (def ^:private competitions (str (System/getenv "HOME") "/.competitions"))
 ;; compare files on /tmp.
@@ -70,6 +72,7 @@
 
 ;; --dry-run
 ;; --example
+;; --version
 (defn -main
   []
   (let [args *command-line-args*]
