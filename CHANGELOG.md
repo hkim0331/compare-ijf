@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## Unreleased
+* ./competitions を問答無用で上書きしているのはどうか？ --no-update オプションとかは？
+* --example オプション。嘘の .competitions と比較する。
+* --dry-run オプション。~/.competitions をアップデートしない。
+* --version オプション。
 * diff が見つかったら自動的にダウンロードしてくるとか。
 * diff のノイズ削減。下の行番号 68a69 はなくても問題ない。
 ```
@@ -8,7 +12,15 @@
 > 1068,World Cup Buenos Aires 2012,100
 ```
 * 一般化。compare-json
+* nil はなに？1a2 は消すはず。
+```
+% ./compare_ijf.clj
+nil
+1a2
+> 1001,World Cup Belo Horizonte 2010,112
+```
 
+## 0.4.0-SNAPSHOT
 
 ## 0.3.1 - 2022-09-05
 ### Changed
