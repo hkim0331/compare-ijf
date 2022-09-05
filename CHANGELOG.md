@@ -1,16 +1,14 @@
 # CHANGELOG
 
 ## Unreleased
-* ./competitions を問答無用で上書きしているのはどうか？ --no-update オプションとかは？
-* --example オプション。
 * diff が見つかったら自動的にダウンロードしてくるとか。
-* --dry-run オプション。~/.competitions をアップデートしない。
 * diff のノイズ削減。下の行番号 68a69 はなくても問題ない。
 ```
 68a69
 > 1068,World Cup Buenos Aires 2012,100
 ```
 * 一般化。compare-json
+
 
 ## 0.3.1 - 2022-09-05
 ### Changed
