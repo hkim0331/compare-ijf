@@ -28,7 +28,11 @@ nil
 * --update オプションがあり、かつ、diff が見つかった時だけ、
   orig を download で置き換える。
 
-## 0.3.0 - 2022-08-19
+## 0.3.2 - 2022-09-05
+### Added
+- bump-version.sh やっぱあったほうがいい。
+
+## 0.3.1 - 2022-08-19
 ### Changed
 * namespaced. これに伴い、compare-ijf を compare_ijf に名称変更。
 * updated README.md
