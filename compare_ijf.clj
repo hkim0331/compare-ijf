@@ -3,14 +3,14 @@
   (:require
    [babashka.curl :as curl]
    [cheshire.core :as json]
-   [clojure.java.io :as io]
+   ;; [clojure.java.io :as io]
    [clojure.java.shell :refer [sh]]
    [clojure.string :as str]))
 
+(def ^:private version "0.3.2")
+
 ;; keep last competitions in a file.
-(def ^:private competitions (str (System/getenv "HOME") "/.competitions"))
-;; compare files on /tmp.
-(def ^:private orig competitions)
+(def ^:private orig (str (System/getenv "HOME") "/.competitions"))
 (def ^:private download "/tmp/from-ijf")
 
 (defn get-url
@@ -53,7 +53,7 @@
   (-> (get-competitions)
       (filter-competitions)
       (save-as-text download))
-  (let [{:keys [exit out err]} (sh "diff" "--normal" "--text" orig download)]
+  (let [{:keys [exit out _]} (sh "diff" "--normal" "--text" orig download)]
     (if (zero? exit)
       (println "no new data")
       (do
