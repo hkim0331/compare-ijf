@@ -6,12 +6,12 @@ Find newly created contests results at https://data.ijf.org.
 
 * macOS or Linux.
 Maybe Windows are also ok if babashka and diff are properly installed.
-I'm using macOS to develop this script,
+I'm using macOS to develop this script.
 
 * babashka
 https://github.com/babashka/babashka
 
-* diff command installed.
+* diff command.
 The diff command is usually found at `/usr/bin/diff` in macos and Linux.
 
 ## Install
@@ -38,11 +38,20 @@ $ compare_ijf
 > 1186,Grand Prix Jeju 2014,112
 ```
 
-For example, the first line tells that IJF updates the 100 results about id_competition = 1068, name = 'World Cup BuenosAires 2012'.
+For example, the first line tells that IJF updates the 100 results about the
+competition whose id_competition is 1068, and whose name is 'World Cup Buenos
+Aires 2012'.
 
 ## TODO
 
 see CHANGELOG.md
+
+## See also,
+
+Followings are cousin projects of this. They are also under construction.
+
+* fights https://github.com/hkim0331/fights
+* fetch-ijf https://github.com/hkim0331/fetch-ijf
 
 ## License
 
