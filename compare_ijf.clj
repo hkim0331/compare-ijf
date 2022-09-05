@@ -64,14 +64,8 @@
           (sh "cp" download orig)
           (println "updated"))))))
 
-<<<<<<< HEAD
 ;; if both --update option given and any diff found,
 ;; `orig` is replaced with `download.
-=======
-;; --dry-run
-;; --example
-;; --version
->>>>>>> 4fee00f5d6c44004977bba0794e0b76bb7c5dc21
 (defn -main
   []
   (compare-ijf (some (partial = "--update")  *command-line-args*)))
