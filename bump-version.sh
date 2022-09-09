@@ -12,4 +12,4 @@ else
 fi
 
 # clj
-${SED} -i "s/(def \^:private version) .+/\1 \"$1\")/" compare_ijf.clj
+${SED} -i "s/(def \^:private version) .+/\1 \"$1\")/" compare-ijf.clj
