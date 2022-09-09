@@ -20,7 +20,11 @@ nil
 > 1001,World Cup Belo Horizonte 2010,112
 ```
 
-## 0.4.0-SNAPSHOT
+## 0.3.3 - 2022-09-09
+* compare_ijf --version でバージョン表示。
+* compare_ijf --update で比較の後にキープするデータをアップデート。
+* compare_ijf 比較するが、キープするデータはそのまま。
+
 
 ## 0.3.1 - 2022-09-05
 ### Changed

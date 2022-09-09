@@ -5,6 +5,7 @@ Find newly created contests results at https://data.ijf.org.
 ## Require
 
 * macOS or Linux.
+
 Maybe Windows are also ok if babashka and diff are properly installed.
 I'm using macOS to develop this script.
 
