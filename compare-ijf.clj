@@ -1,4 +1,7 @@
 #!/usr/bin/env bb
+;;;
+;;; https://github.com/hkim0331/compare-ijf.git
+;;;
 (ns compare-ijf
   (:require
    [babashka.curl :as curl]
@@ -7,7 +10,7 @@
    [clojure.java.shell :refer [sh]]
    [clojure.string :as str]))
 
-(def ^:private version "0.3.2")
+(def ^:private version "0.3.3")
 
 ;; keep last competitions in a file.
 (def ^:private orig (str (System/getenv "HOME") "/.competitions"))
@@ -62,10 +65,12 @@
           (sh "cp" download orig)
           (println "updated"))))))
 
-;; if both --update option given and any diff found,
-;; `orig` is replaced with `download.
+
+;; if --update option given, `orig` is replaced after download.
 (defn -main
   []
-  (compare-ijf (some (partial = "--update")  *command-line-args*)))
+  (cond
+    (some (partial = "--version") *command-line-args*) (println version)
+    :else (compare-ijf (some (partial = "--update") *command-line-args*))))
 
 (-main)

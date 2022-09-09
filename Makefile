@@ -1,3 +1,3 @@
 install:
-	cp compare_ijf.clj ~/bin/compare_ijf
-	chmod +x ~/bin/compare_ijf
+	install -m=0755 compare_ijf.clj ~/bin/compare-ijf
+
