@@ -5,12 +5,13 @@
 (ns compare-ijf
   (:require
    [babashka.curl :as curl]
+   [babashka.fs :as fs]
    [cheshire.core :as json]
    ;; [clojure.java.io :as io]
    [clojure.java.shell :refer [sh]]
    [clojure.string :as str]))
 
-(def ^:private version "0.3.3")
+(def ^:private version "0.3.4")
 
 ;; keep last competitions in a file.
 (def ^:private orig (str (System/getenv "HOME") "/.competitions"))
@@ -35,8 +36,6 @@
   (->> coll
        (map #(select-keys % [:id_competition :name :has_results]))
        (sort-by :id_competition)))
-
-;;(filter-competitions ijf)
 
 (defn save-as-text
   "save coll's values only to dest, as,
@@ -65,12 +64,20 @@
           (sh "cp" download orig)
           (println "updated"))))))
 
+(defn has?
+  [s]
+  (some #(= s %) *command-line-args*))
 
-;; if --update option given, `orig` is replaced after download.
+(defn mtime
+  [f]
+  (-> (fs/last-modified-time f)
+      str))
+
 (defn -main
   []
   (cond
-    (some (partial = "--version") *command-line-args*) (println version)
-    :else (compare-ijf (some (partial = "--update") *command-line-args*))))
+    (has? "--version") (println version)
+    (has? "--last") (mtime orig)
+    :else (compare-ijf (has? "--update"))))
 
 (-main)
