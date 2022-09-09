@@ -11,7 +11,7 @@
    [clojure.java.shell :refer [sh]]
    [clojure.string :as str]))
 
-(def ^:private version "0.3.3")
+(def ^:private version "0.3.4")
 
 ;; keep last competitions in a file.
 (def ^:private orig (str (System/getenv "HOME") "/.competitions"))
