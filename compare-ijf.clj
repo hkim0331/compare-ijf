@@ -5,6 +5,7 @@
 (ns compare-ijf
   (:require
    [babashka.curl :as curl]
+   [babashka.fs :as fs]
    [cheshire.core :as json]
    ;; [clojure.java.io :as io]
    [clojure.java.shell :refer [sh]]
@@ -36,8 +37,6 @@
        (map #(select-keys % [:id_competition :name :has_results]))
        (sort-by :id_competition)))
 
-;;(filter-competitions ijf)
-
 (defn save-as-text
   "save coll's values only to dest, as,
    1000 World Cup Cairo 2010 112
@@ -65,12 +64,20 @@
           (sh "cp" download orig)
           (println "updated"))))))
 
+(defn has?
+  [s]
+  (some #(= s %) *command-line-args*))
 
-;; if --update option given, `orig` is replaced after download.
+(defn mtime
+  [f]
+  (-> (fs/last-modified-time f)
+      str))
+
 (defn -main
   []
   (cond
-    (some (partial = "--version") *command-line-args*) (println version)
-    :else (compare-ijf (some (partial = "--update") *command-line-args*))))
+    (has? "--version") (println version)
+    (has? "--last") (mtime orig)
+    :else (compare-ijf (has? "--update"))))
 
 (-main)
